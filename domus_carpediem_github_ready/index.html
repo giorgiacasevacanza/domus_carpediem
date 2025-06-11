@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Mie Case Vacanza</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header, footer { background: #333; color: white; text-align: center; padding: 1em 0; }
+    header h2 { margin: 0; font-weight: normal; font-size: 1.1em; color: #ccc; }
+    nav a { color: white; margin: 0 1em; text-decoration: none; }
+    .container { padding: 2em; }
+    .apartment { border: 1px solid #ccc; padding: 1em; margin-bottom: 2em; border-radius: 8px; }
+    .apartment h2 { margin-top: 0; }
+    .gallery { display: flex; flex-wrap: wrap; gap: 1em; justify-content: start; }
+    .gallery img { width: calc(50% - 0.5em); max-width: 100%; border-radius: 8px; }
+    .contact { background: #f9f9f9; padding: 1em; border-radius: 8px; }
+    .btn-book {
+      display: inline-block;
+      margin-top: 1.5em;
+      padding: 0.7em 1.5em;
+      background-color: #007BFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .btn-book:hover {
+      background-color: #0056b3;
+    }
+    iframe { width: 100%; height: 400px; border: 0; margin-top: 2em; border-radius: 8px; }
+    @media screen and (max-width: 768px) {
+      .container { padding: 1em; }
+      .gallery img { width: 100%; }
+    }
+    .lang-switch { text-align: right; padding: 0.5em 1em; font-size: 0.9em; }
+    .lang-switch a { margin-left: 1em; text-decoration: none; color: #333; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Le Mie Case Vacanza</h1>
+    <h2>Olimpico, Ponte Milvio, Farnesina</h2>
+    <div class="lang-switch">
+      <a href="#" onclick="switchLang('it')">IT</a>
+      <a href="#" onclick="switchLang('en')">EN</a>
+    </div>
+    <nav>
+      <a href="#carpe-diem">Carpe Diem</a>
+      <a href="#domus-b">Domus B</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section id="carpe-diem" class="apartment">
+      <h2 data-it="Carpe Diem" data-en="Carpe Diem">Carpe Diem</h2>
+      <p data-it="<strong>Capienza:</strong> Massimo 3 persone" data-en="<strong>Capacity:</strong> Up to 3 people"></p>
+      <p data-it="<strong>Indirizzo:</strong> Via della Farnesina 11 C, 00123 Roma" data-en="<strong>Address:</strong> Via della Farnesina 11 C, 00123 Rome"></p>
+      <p data-it="<strong>Descrizione:</strong> Appartamento di 45 mq..." data-en="<strong>Description:</strong> 45 sqm apartment..."></p>
+      <div class="gallery"></div>
+      <a class="btn-book" href="mailto:giorgiaceliberti3@gmail.com?subject=Prenotazione%20Carpe%20Diem">Prenota ora</a>
+    </section>
+
+    <section id="domus-b" class="apartment">
+      <h2 data-it="Domus B" data-en="Domus B">Domus B</h2>
+      <p data-it="<strong>Capienza:</strong> Massimo 4 persone" data-en="<strong>Capacity:</strong> Up to 4 people"></p>
+      <p data-it="<strong>Indirizzo:</strong> Largo Gerolamo Belloni 10, 00191 Roma" data-en="<strong>Address:</strong> Largo Gerolamo Belloni 10, 00191 Rome"></p>
+      <p data-it="<strong>Descrizione:</strong> Delizioso appartamento di 50 mq..." data-en="<strong>Description:</strong> Charming 50 sqm apartment..."></p>
+      <div class="gallery"></div>
+      <a class="btn-book" href="mailto:giorgiaceliberti3@gmail.com?subject=Prenotazione%20Domus%20B">Prenota ora</a>
+    </section>
+
+    <section id="contatti" class="contact">
+      <h2 data-it="Contatti" data-en="Contacts">Contatti</h2>
+      <p><strong>Telefono / WhatsApp:</strong> <a href="tel:+393467951819">+39 346 795 1819</a></p>
+      <p><strong>Email:</strong> <a href="mailto:giorgiaceliberti3@gmail.com">giorgiaceliberti3@gmail.com</a></p>
+      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1SkvuNoXpPSkN2csEF9nNmErGILuqIp4&ehbc=2E312F"></iframe>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Le Mie Case Vacanza</p>
+  </footer>
+
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+        el.innerHTML = el.getAttribute('data-' + lang);
+      });
+    }
+  </script>
+</body>
+</html>
